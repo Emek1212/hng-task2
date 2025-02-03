@@ -4,10 +4,10 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
-// Get the number from the query string
+// Check for number and validate
 if (!isset($_GET['number']) || !is_numeric($_GET['number'])) {
+    http_response_code(400); 
     echo json_encode(["error" => true, "message" => "alphabet"]);
-    http_response_code(400);
     exit;
 }
 
@@ -63,8 +63,10 @@ $response = [
     "fun_fact" => $funFact
 ];
 
-// Send JSON response
+// Set response code to 200 (Success)
 http_response_code(200);
+
+// Send JSON response
 echo json_encode($response);
 
 ?>
