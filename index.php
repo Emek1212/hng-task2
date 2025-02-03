@@ -6,7 +6,7 @@ header("Content-Type: application/json");
 
 // Get the number from the query string
 if (!isset($_GET['number']) || !is_numeric($_GET['number'])) {
-    echo json_encode(["error" => true, "message" => "Invalid number"]);
+    echo json_encode(["error" => true, "message" => "alphabet"]);
     http_response_code(400);
     exit;
 }
