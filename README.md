@@ -47,7 +47,7 @@ Setup Instructions (Running Locally)
 
 Clone the repository:
 
-git clone https://github.com/Emek1212/hng2-task.git
+git clone https://github.com/Emek1212/hng-task2.git
 
 
 
