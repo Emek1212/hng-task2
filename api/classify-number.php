@@ -3,14 +3,13 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-
-// Enable CORS
+// Enable CORS for cross-origin requests
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
-// Check for number and validate
 if (!isset($_GET['number']) || !is_numeric($_GET['number'])) {
-    http_response_code(400); 
+    
+    http_response_code(400); // Bad Request
     echo json_encode(["error" => true, "message" => "alphabet"]);
     exit;
 }
@@ -46,15 +45,14 @@ function isArmstrong($num) {
     return $sum == $num;
 }
 
-// Get properties
 $properties = [];
 if (isArmstrong($number)) $properties[] = "armstrong";
 $properties[] = ($number % 2 === 0) ? "even" : "odd";
 
-// Get digit sum
+
 $digitSum = array_sum(str_split($number));
 
-// Get fun fact from Numbers API
+// Get a fun fact from the Numbers API (math-related fact)
 $funFact = file_get_contents("http://numbersapi.com/$number/math");
 
 // Prepare JSON response
@@ -70,7 +68,7 @@ $response = [
 // Set response code to 200 (Success)
 http_response_code(200);
 
-// Send JSON response
+// Send the JSON response
 echo json_encode($response);
 
 ?>
