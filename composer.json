@@ -1,8 +1,6 @@
 {
-    "name": "hng-task2",
-    "description": "A project to classify numbers",
     "require": {
-      "php": "^7.4 || ^8.0"
+      "php": "^8.1"
     }
   }
   
