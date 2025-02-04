@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^api/classify-number$ /api/classify-number.php [L]
