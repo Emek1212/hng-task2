@@ -1,2 +1,14 @@
+
 RewriteEngine On
+
 RewriteRule ^api/classify-number$ /api/classify-number.php [L]
+
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+Header set Access-Control-Allow-Headers "Content-Type"
+
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^ - [R=200,L]
+
+#RewriteCond %{HTTPS} off
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
