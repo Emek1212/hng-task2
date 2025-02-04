@@ -2,7 +2,6 @@ RewriteEngine On
 
 RewriteRule ^api/classify-number$ /api/classify-number.php [L,QSA]
 
-
 Header set Access-Control-Allow-Origin "*"
 Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
 Header set Access-Control-Allow-Headers "Content-Type"
